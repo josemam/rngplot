@@ -13,15 +13,20 @@ set xrange [0:m-1]
 set yrange [0:m-1]
 set zrange [0:m-1]
 sa = start
+set xlabel 'i'
+set ylabel 'x_i'
 plot lcga(a,c,m) title "" with points pointtype 7 pointsize 0.3
 pause -1
 set parametric
 sa = sb = start
+set xlabel 'x_i'
+set ylabel 'x_{i+1}'
 null = lcgb(a,c,m)
 plot lcga(a,c,m), lcgb(a,c,m) title "" with points pointtype 7 pointsize 0.3
 pause -1
 set samples 100
 sa = sb = sc = start
+set zlabel 'x_{i+2}' offset -3
 null = lcgb(a,c,m)
 null = lcgc(a,c,m)
 null = lcgc(a,c,m)
